@@ -26,7 +26,7 @@ header .wrap{display:flex;align-items:center;gap:24px;height:82px}
 .logo img{width:220px;height:auto;max-height:62px;object-fit:contain;display:block}
 .logo b,.logo small{display:none}
 nav{margin-left:auto;display:flex;gap:22px;font-size:15px}
-nav a{text-decoration:none;color:#07182B;font-weight:700;opacity:1;text-shadow:none}nav a:hover{color:#86590F}nav a:focus-visible{color:#07182B;outline:3px solid #C8963E;outline-offset:4px}
+nav a{text-decoration:none;color:var(--ink);font-weight:500}nav a:hover{color:var(--goldtxt)}
 .btn{display:inline-block;border:0;border-radius:6px;padding:11px 20px;font:600 15px "IBM Plex Sans",sans-serif;background:var(--gold);color:#0E2238;text-decoration:none;cursor:pointer}
 .btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px #5A7089}
 .hero{background:var(--navy);color:#fff;padding:64px 0 72px}
@@ -83,7 +83,107 @@ footer p{margin:4px 0}
 .fine{grid-column:1/-1;border-top:1px solid #24384D;padding-top:16px;font-size:12px}
 @media (max-width:860px){nav{display:none}header .btn{margin-left:auto}.hero .wrap,.cells,.join,footer .wrap{grid-template-columns:1fr}.flow ol,.steps{grid-template-columns:1fr 1fr}.flow li{border-left:0;border-top:1px solid var(--line)}.tabs{flex-direction:row;overflow-x:auto}.tabs button{white-space:nowrap}section{padding:48px 0}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* FMVODA 2.0 visual redesign — stronger editorial layout and interactive cards */
+:root{--bg:#f5f7fa;--surface:#fff;--ink:#10253d;--muted:#56697c;--line:#d9e1e9;--gold:#d8a344;--goldtxt:#966515;--navy:#0b2037}
+body{background:#f5f7fa;color:var(--ink)}
+header{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 8px 28px rgba(11,32,55,.08);border-bottom:1px solid #e2e8ef}
+header .wrap{height:78px}
+.logo img{width:208px;max-height:60px}
+nav{gap:26px}nav a{font-weight:600;position:relative;padding:9px 0}nav a:after{content:"";position:absolute;left:0;bottom:1px;width:0;height:2px;background:var(--gold);transition:width .22s ease}nav a:hover:after,nav a:focus-visible:after{width:100%}
+.btn{border-radius:7px;background:#e0ad4f;color:#10253d;box-shadow:0 7px 16px rgba(216,163,68,.18);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(216,163,68,.28);background:#edbd63}.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);box-shadow:none}.btn.ghost:hover{background:rgba(255,255,255,.1);box-shadow:none}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:86px 0 82px;background:linear-gradient(118deg,#0b2037 0%,#102f4e 58%,#163c5a 100%)}
+.hero:before{content:"";position:absolute;z-index:-1;right:-130px;top:-250px;width:700px;height:700px;border:1px solid rgba(224,173,79,.22);border-radius:50%;box-shadow:0 0 0 42px rgba(255,255,255,.025),0 0 0 95px rgba(255,255,255,.02),0 0 0 150px rgba(255,255,255,.018)}
+.hero:after{content:"FMVODA 2.0  •  CAPABILITY  •  OPPORTUNITY  •  MARKET ACCESS";position:absolute;z-index:-1;right:3%;bottom:22px;color:rgba(255,255,255,.22);font-size:10px;letter-spacing:.22em;font-weight:600}
+.hero .wrap{grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:64px;align-items:center}
+.hero h1{font-size:clamp(42px,5.5vw,72px);letter-spacing:-.025em;max-width:13ch}.hero p{font-size:18px;line-height:1.75;max-width:56ch;color:#d0dbe6}.hero .cta{gap:14px}
+.vp{position:relative;border-radius:16px;padding:26px;background:linear-gradient(150deg,#fff,#f5f8fb);color:#10253d;box-shadow:0 28px 70px rgba(0,0,0,.28);transform:rotate(1deg);transition:transform .3s ease,box-shadow .3s ease}.vp:hover{transform:rotate(0) translateY(-5px);box-shadow:0 34px 78px rgba(0,0,0,.34)}.vp:before{content:"ILLUSTRATIVE PROFILE";position:absolute;right:20px;top:19px;font-size:9px;letter-spacing:.14em;color:#7b8b9b;font-weight:700}.vp .tag{padding-right:65px}.vp h3{font-size:30px;margin-top:10px}.ok{margin:14px 0}.chip{border-radius:99px;padding:5px 10px;background:#f0f4f7}.vp dl{padding-top:15px;border-top:1px solid #dfe6ed;gap:7px 14px}.vp dt{color:#617489}
+.flow{background:#fff;border-bottom:1px solid #dfe6ed}.flow ol{grid-template-columns:repeat(5,1fr);padding:10px 0}.flow li{position:relative;padding:20px 18px;border-left:1px solid #e3e9ef;transition:background .2s ease}.flow li:hover{background:#f7f9fb}.flow strong{font-size:24px}.flow span{display:block;margin-top:3px}
+section{padding:88px 0}h2{font-size:clamp(34px,4.1vw,50px);letter-spacing:-.015em;max-width:20ch} .lead{font-size:17px;line-height:1.75;max-width:66ch;margin-top:14px;margin-bottom:36px}
+#what{background:linear-gradient(180deg,#f5f7fa,#edf2f6)}
+.cells{display:grid;grid-template-columns:1fr;gap:20px}.tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-content:start}.tabs button{position:relative;min-height:112px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:12px;text-align:left;background:#fff;border:1px solid #dbe3eb;border-radius:12px;padding:16px;color:#17304a;box-shadow:0 4px 12px rgba(16,37,61,.025);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease}.tabs button:hover{transform:translateY(-4px);box-shadow:0 15px 30px rgba(16,37,61,.09);border-color:#c99b43}.tabs button[aria-selected=true]{background:#102b47;color:#fff;border-color:#102b47;box-shadow:0 12px 26px rgba(16,43,71,.18)}.tabs button i{width:36px;height:36px;border-radius:9px;background:#eef2f6;color:#17304a;font-size:18px}.tabs button[aria-selected=true] i{background:#e0ad4f;color:#10253d}.panel{border-radius:14px;padding:30px 34px;box-shadow:0 8px 28px rgba(16,37,61,.06);border:1px solid #dbe3eb;display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.55fr);column-gap:32px;align-items:start}.panel h3{font-size:34px;grid-column:1}.panel .sub{grid-column:1;color:#a37320;margin:8px 0 14px}.panel ul{grid-column:1;columns:2;column-gap:24px;margin-bottom:0}.panel li{break-inside:avoid;margin:7px 0}.panel .out{grid-column:2;grid-row:1 / span 3;border-top:0;border-left:1px solid #e0e6ec;padding:5px 0 5px 22px;align-content:start}.panel .out span{background:#edf2f6;color:#18334f;border-radius:99px;padding:7px 11px;font-size:12px;font-weight:600}
+.alt{background:#fff;border-block:1px solid #e0e7ee}.seg{border-radius:99px;padding:4px;background:#edf1f5;border:0;gap:4px}.seg button{border-radius:99px;padding:11px 20px;transition:background .2s ease,color .2s ease}.seg button[aria-pressed=true]{background:#102b47;color:#fff;box-shadow:0 4px 12px rgba(16,43,71,.18)}.steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.steps .card{position:relative;overflow:hidden;border-radius:12px;padding:24px 20px;min-height:166px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.steps .card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#d8a344;transform:scaleY(.25);transform-origin:center;transition:transform .22s ease}.steps .card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(16,37,61,.09);border-color:#d8a344}.steps .card:hover:before{transform:scaleY(1)}.steps h3{font-size:25px;margin-bottom:12px}.steps p{font-size:15px;line-height:1.65}.find{margin-top:28px}.find .chip{border-radius:99px;padding:6px 12px}
+#join{background:#f0f4f7}.join{align-items:start;gap:64px}.join>div:first-child{padding:14px 0}.join>div:first-child p:not(.lead){max-width:48ch;color:#50657a}.join form{background:#fff;border:1px solid #dce4ec;border-radius:16px;padding:28px;box-shadow:0 16px 38px rgba(16,37,61,.06)}label{gap:7px}input,select{border-radius:8px;min-height:46px;border-color:#ccd7e2;transition:border-color .2s ease,box-shadow .2s ease}input:focus,select:focus{outline:0;border-color:#c99b43;box-shadow:0 0 0 3px rgba(216,163,68,.18)}form .btn{min-height:48px}#msg{font-size:14px}
+footer{background:#091b2e;color:#b9c7d4;padding:52px 0 30px}footer h3{font-size:23px}footer .wrap{gap:38px}footer a:hover{color:#e0ad4f}.fine{border-color:#26394b;line-height:1.7}
+@media(max-width:900px){.hero{padding:62px 0}.hero .wrap{gap:36px}.tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{grid-template-columns:1fr}.panel .out{grid-column:1;grid-row:auto;border-left:0;border-top:1px solid #e0e6ec;padding:18px 0 0;margin-top:18px}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.join{gap:28px}}
+@media(max-width:600px){header .wrap{height:70px;gap:10px}.logo img{width:155px}header .btn{font-size:12px;padding:10px 12px}.hero{padding:50px 0 56px}.hero .wrap{grid-template-columns:1fr}.hero h1{font-size:43px}.hero p{font-size:16px}.vp{transform:none;padding:22px}.flow ol{grid-template-columns:repeat(2,minmax(0,1fr))}.flow li{padding:14px 12px}.flow li:last-child{grid-column:1/-1}section{padding:58px 0}.tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.tabs button{min-height:120px;padding:12px;font-size:13px}.panel{padding:22px}.panel h3{font-size:29px}.panel ul{columns:1}.steps{grid-template-columns:1fr}.steps .card{min-height:auto}.seg{max-width:100%}.seg button{padding:10px 13px;font-size:13px}.join form{padding:20px}footer .wrap{grid-template-columns:1fr;gap:22px}.fine{grid-column:1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;transform:none!important}}
+
 </style>
+
+<style id="fmvoda-high-contrast-text-fix">
+/* High-contrast readability pass: dark text on light surfaces, clear white text on dark surfaces. */
+:root{--ink:#142235;--muted:#3F4D5D;--line:#C7D0DA;}
+body{color:#142235!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body p,body li,body label,body small,body .muted,body .fine,body .eyebrow,body .subtitle,body .description,body .step p,body .card p,body .panel p,body .tabs button,body input,body textarea,body select{color:#263648}
+body h1,body h2,body h3,body h4,body strong,body b{color:#101D2E}
+body p,body li,body label,body input,body textarea,body select{opacity:1!important}
+body input::placeholder,body textarea::placeholder{color:#596779!important;opacity:1!important}
+body a{ text-decoration-thickness:1px; text-underline-offset:3px }
+header,header nav a,header .brand,header .logo,header .menu a{color:#142235!important}
+.hero,.hero h1,.hero h2,.hero h3,.hero p,.hero li,.hero strong,.hero .eyebrow,.hero .subtitle{color:#FFFFFF!important}
+.hero p,.hero li{color:#E6EDF5!important}
+.hero .eyebrow{color:#F2C879!important}
+.hero a:not(.btn){color:#FFFFFF!important}
+footer,footer h2,footer h3,footer p,footer li,footer a,footer .fine{color:#E8EEF5!important}
+footer .fine{opacity:1!important}
+button,.btn{opacity:1!important}
+@media(max-width:600px){body{font-size:16px}body p,body li,body label{line-height:1.65}}
+</style>
+
+
+<style id="fmvoda-panel-contrast-fix">
+/* High-contrast text specifically for the dark service-detail panel */
+#panel.panel{background:#102b47!important;color:#f5f8fc!important;border-color:#29445f!important}
+#panel.panel h3,#panel.panel li,#panel.panel ul{color:#f5f8fc!important}
+#panel.panel .sub{color:#f2c879!important}
+#panel.panel .out{border-color:#9aafc3!important}
+#panel.panel .out span{background:#f2f6fa!important;color:#102b47!important}
+</style>
+
+<style id="steps-blue-panel-fix">
+/* Match the four workflow cards to the dark-blue membership detail panel */
+#steps .card, .steps .card { background:#102b47 !important; color:#f5f8fc !important; border:1px solid #29445f !important; box-shadow:0 8px 22px rgba(10,28,47,.12) !important; }
+#steps .card h3, .steps .card h3 { color:#ffffff !important; font-weight:800 !important; opacity:1 !important; }
+#steps .card p, .steps .card p { color:#e5edf5 !important; opacity:1 !important; }
+#steps .card:before, .steps .card:before { background:#d8a344 !important; }
+#steps .card:hover, .steps .card:hover { background:#173957 !important; border-color:#d8a344 !important; }
+</style>
+
+<style id="steps-blue-panel-fix">
+/* Match Register, Get verified, Be found and Respond cards to the dark-blue service panel */
+#steps .card, .steps .card { background:#102b47 !important; color:#f5f8fc !important; border:1px solid #29445f !important; box-shadow:0 8px 22px rgba(10,28,47,.12) !important; }
+#steps .card h3, .steps .card h3 { color:#ffffff !important; font-weight:800 !important; opacity:1 !important; }
+#steps .card p, .steps .card p { color:#e5edf5 !important; opacity:1 !important; }
+#steps .card:before, .steps .card:before { background:#d8a344 !important; }
+#steps .card:hover, .steps .card:hover { background:#173957 !important; border-color:#d8a344 !important; }
+</style>
+
+<style id="fmvoda-filter-contrast-fix">
+/* Marketplace filter chips: navy background with clearly readable white labels. */
+#market .find .chip{background:#0b2037!important;color:#fff!important;border:1px solid #0b2037!important;font-weight:600!important;opacity:1!important}
+#market .find .chip:hover{background:#173c5b!important;border-color:#d8a344!important}
+#market .find>span:first-child{color:#263648!important;font-weight:600!important}
+</style>
+
+<style id="fmvoda-membership-input-contrast-fix">
+/* Membership form entry fields: white background with black, readable text. */
+#join form input, #join form select, #join form textarea {
+  background-color:#ffffff !important;
+  color:#111111 !important;
+  -webkit-text-fill-color:#111111 !important;
+  border:1px solid #aebbc8 !important;
+  opacity:1 !important;
+}
+#join form input::placeholder, #join form textarea::placeholder {
+  color:#333333 !important; opacity:1 !important;
+}
+#join form select option { background:#ffffff !important; color:#111111 !important; }
+#join form input:focus, #join form select:focus, #join form textarea:focus {
+  border-color:#c8963e !important; box-shadow:0 0 0 3px rgba(200,150,62,.22) !important;
+}
+</style>
+
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 48 48"><polygon points="24,2 43,13 43,35 24,46 5,35 5,13" fill="var(--hex,#0E2238)" stroke="#C8963E" stroke-width="2"/><polygon points="24,9 36,31 24,25 12,31" fill="#C8963E"/><rect x="17" y="35" width="14" height="2" fill="#E8741E"/><rect x="17" y="37.7" width="14" height="2" fill="#fff"/><rect x="17" y="40.4" width="14" height="2" fill="#1E7A44"/></symbol></svg>
@@ -97,15 +197,15 @@ footer p{margin:4px 0}
 <main id="top">
 <div class="hero"><div class="wrap">
 <div>
-<h1>Connecting India's defence and aerospace MSMEs to opportunities, technology and global markets.</h1>
-<p>FMVODA verifies MSME capability, opens doors to DPSU, military and OEM buyers, and supports quality, finance and technology along the way.</p>
+<h1>Make India’s defence MSME capabilities visible, verified and market-ready.</h1>
+<p>A capability-led platform connecting Indian MSMEs with buyer requirements, vendor development, quality and certification guidance, finance, technology collaboration and export pathways.</p>
 <div class="cta"><a class="btn" href="#join">Register your MSME</a><a class="btn ghost" href="#market">Explore the marketplace</a></div>
 </div>
 <aside class="card vp" aria-label="Sample vendor profile">
 <div class="tag">Sample vendor profile</div>
 <h3>Sample Precision Works</h3>
 <div class="tag">Pune, Maharashtra · Machining and fabrication · Small enterprise</div>
-<div class="ok">✓ Verified by FMVODA</div>
+<div class="ok">✓ Illustrative sample profile</div>
 <div class="chips"><span class="chip">AS9100D</span><span class="chip">ISO 9001:2015</span><span class="chip">5-axis CNC</span><span class="chip">Sheet metal</span></div>
 <dl><dt>Capacity</dt><dd>400 machine hours a month</dd><dt>Lead time</dt><dd>6 to 8 weeks</dd><dt>Past buyers</dt><dd>Private OEM, DPSU</dd></dl>
 </aside>
@@ -120,16 +220,16 @@ footer p{margin:4px 0}
 </ol></div></div>
 
 <section id="what"><div class="wrap">
-<h2>Eight cells, one path from registration to orders</h2>
-<p class="lead">Each cell handles one part of getting a defence MSME ready, funded and in front of the right buyer.</p>
+<h2>Eight service verticals. One connected ecosystem.</h2>
+<p class="lead">Explore the support areas designed to make suppliers more visible, procurement-ready and globally competitive.</p>
 <div class="cells">
 <div class="tabs" role="tablist" aria-label="FMVODA cells" id="tabs"></div>
 <div class="card panel" id="panel" role="tabpanel" aria-live="polite"></div>
 </div></div></section>
 
 <section id="market" class="alt"><div class="wrap">
-<h2>The FMVODA marketplace</h2>
-<p class="lead">One verified directory and opportunity board, with a different path for each side.</p>
+<h2>A capability-led marketplace for defence and aerospace</h2>
+<p class="lead">A structured supplier directory and opportunity workflow that helps buyers discover capabilities and helps MSMEs understand the path to qualification.</p>
 <div class="seg" role="group" aria-label="Choose your role"><button aria-pressed="true" data-r="v">I am an MSME</button><button aria-pressed="false" data-r="b">I am a buyer</button></div>
 <div class="steps" id="steps"></div>
 <div class="find"><span>Buyers can filter by:</span><span class="chip">Process</span><span class="chip">Material</span><span class="chip">Certification</span><span class="chip">City or cluster</span><span class="chip">Capacity</span><span class="chip">Defence history</span></div>
@@ -139,7 +239,7 @@ footer p{margin:4px 0}
 <div>
 <h2>Join FMVODA</h2>
 <p class="lead">Tell us about your unit. Our Pune coordination centre will contact you to begin verification.</p>
-<p>Membership supports registration, verification and handholding. It does not guarantee orders or government access.</p>
+<p>Membership can support registration, capability profiling and supplier development. It does not guarantee orders, buyer approval, financing, certification or government contracts.</p>
 </div>
 <form id="f">
 <label>Company name<input required name="c" autocomplete="organization"></label>
@@ -179,7 +279,7 @@ const steps=document.getElementById('steps');
 function role(r){document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===r));
 steps.innerHTML=flows[r].map(s=>'<div class="card"><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>').join('');}
 document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>role(b.dataset.r));role('v');
-document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('msg').textContent='Request received. We will contact you from the Pune centre.';e.target.reset();};
+document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('msg').textContent='Prototype only: your details have not been sent or saved. Backend submission will be connected separately.';};
 </script>
 </body>
 </html>
