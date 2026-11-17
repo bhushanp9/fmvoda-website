@@ -419,7 +419,53 @@ const steps=document.getElementById('steps');
 function role(r){document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===r));
 steps.innerHTML=flows[r].map(s=>'<div class="card"><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>').join('');}
 document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>role(b.dataset.r));role('v');
-document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('msg').textContent='Prototype only: your details have not been sent or saved. Backend submission will be connected separately.';};
+const API_URL = "https://fmvoda-website.onrender.com";
+
+document.getElementById('f').onsubmit = async (e) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const msg = document.getElementById('msg');
+  const button = form.querySelector('button[type="submit"]');
+
+  const data = {
+    c: form.elements.c.value.trim(),
+    p: form.elements.p.value.trim(),
+    s: form.elements.s.value
+  };
+
+  button.disabled = true;
+  msg.style.color = "#1E7A44";
+  msg.textContent = "Submitting your application...";
+
+  try {
+    const response = await fetch(`${API_URL}/api/membership`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.detail || "Submission failed");
+    }
+
+    msg.textContent =
+      `Application submitted successfully! Reference ID: ${result.reference_id}`;
+
+    form.reset();
+  } catch (error) {
+    console.error("Membership submission error:", error);
+    msg.style.color = "#B42318";
+    msg.textContent =
+      "Unable to submit your application. Please try again later.";
+  } finally {
+    button.disabled = false;
+  }
+};
 </script>
 </body>
 </html>
