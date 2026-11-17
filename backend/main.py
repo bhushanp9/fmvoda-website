@@ -118,4 +118,3 @@ def submit_membership(
             status_code=500,
             detail="Unable to save membership application."
         )
-
