@@ -112,9 +112,10 @@ def submit_membership(
             "status": new_application.status
         }
 
-    except Exception:
-        db.rollback()
-        raise HTTPException(
-            status_code=500,
-            detail="Unable to save membership application."
-        )
+    except Exception as e:
+    db.rollback()
+    print("DATABASE ERROR:", repr(e))
+    raise HTTPException(
+        status_code=500,
+        detail="Unable to save membership application."
+    )
