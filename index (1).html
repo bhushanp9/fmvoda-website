@@ -184,6 +184,119 @@ button,.btn{opacity:1!important}
 }
 </style>
 
+
+
+<style id="fmvoda-footer-layout1">
+/* FMVODA footer — Layout 1: centred brand and office details on the left, social links on the right. */
+.fmvoda-footer {
+  background: #091b2e;
+  color: #e8eef5;
+  padding: 52px 0 30px;
+}
+.fmvoda-footer .footer-layout1 {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(150px, 1fr);
+  gap: 38px;
+  align-items: start;
+}
+.fmvoda-footer .footer-layout1__left {
+  min-width: 0;
+}
+.fmvoda-footer .footer-layout1__brand {
+  text-align: center;
+  margin: 0 auto 30px;
+}
+.fmvoda-footer .footer-layout1__brand h2 {
+  max-width: none;
+  margin: 0 0 9px;
+  color: #fff;
+  font-size: 34px;
+}
+.fmvoda-footer .footer-layout1__brand p {
+  margin: 4px 0;
+  color: #d6e0ea;
+}
+.fmvoda-footer .footer-layout1__addresses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+.fmvoda-footer .footer-layout1__address {
+  text-align: center;
+  min-width: 0;
+}
+.fmvoda-footer .footer-layout1__address h3,
+.fmvoda-footer .footer-layout1__social h3 {
+  color: #fff;
+  font-size: 22px;
+  margin: 0 0 9px;
+}
+.fmvoda-footer .footer-layout1__address p {
+  color: #d6e0ea;
+  line-height: 1.7;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.fmvoda-footer .footer-layout1__social {
+  padding-top: 3px;
+}
+.fmvoda-footer .footer-layout1__social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 11px;
+}
+.fmvoda-footer .footer-layout1__social li,
+.fmvoda-footer .footer-layout1__social span {
+  color: #d6e0ea;
+}
+.fmvoda-footer .footer-layout1__social span {
+  display: inline-block;
+  text-decoration: none;
+}
+.fmvoda-footer .footer-layout1__social span:hover {
+  color: #e0ad4f;
+}
+.fmvoda-footer .footer-layout1 .fine {
+  grid-column: 1 / -1;
+  border-top: 1px solid #26394b;
+  padding-top: 16px;
+  margin: 0;
+  color: #c4d0dc;
+  font-size: 12px;
+  line-height: 1.7;
+}
+@media (max-width: 860px) {
+  .fmvoda-footer .footer-layout1 {
+    grid-template-columns: minmax(0, 1fr) minmax(130px, .55fr);
+    gap: 28px;
+  }
+}
+@media (max-width: 600px) {
+  .fmvoda-footer .footer-layout1 {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .fmvoda-footer .footer-layout1__brand {
+    margin-bottom: 24px;
+  }
+  .fmvoda-footer .footer-layout1__addresses {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .fmvoda-footer .footer-layout1__social {
+    text-align: center;
+  }
+  .fmvoda-footer .footer-layout1__social ul {
+    gap: 9px;
+  }
+  .fmvoda-footer .footer-layout1 .fine {
+    grid-column: 1;
+  }
+}
+</style>
+
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 48 48"><polygon points="24,2 43,13 43,35 24,46 5,35 5,13" fill="var(--hex,#0E2238)" stroke="#C8963E" stroke-width="2"/><polygon points="24,9 36,31 24,25 12,31" fill="#C8963E"/><rect x="17" y="35" width="14" height="2" fill="#E8741E"/><rect x="17" y="37.7" width="14" height="2" fill="#fff"/><rect x="17" y="40.4" width="14" height="2" fill="#1E7A44"/></symbol></svg>
@@ -251,12 +364,39 @@ button,.btn{opacity:1!important}
 </div></section>
 </main>
 
-<footer><div class="wrap">
-<div><h3>FMVODA</h3><p>Federation of MSME Vendors of Defence &amp; Aerospace. A stronger, self-reliant India through defence MSMEs.</p></div>
-<div><h3>Pune centre</h3><p>Aundh 411067</p></div>
-<div><h3>Follow</h3><p>LinkedIn · X · YouTube · WhatsApp Channel</p></div>
-<div class="fine">Prototype for review. Vendor profile shown is sample data.</div>
-</div></footer>
+<footer class="fmvoda-footer">
+  <div class="wrap footer-layout1">
+    <div class="footer-layout1__left">
+      <div class="footer-layout1__brand">
+        <h2>FMVODA</h2>
+        <p>Federation of MSME Vendors of Defence &amp; Aerospace.</p>
+        <p>A stronger, self-reliant India through defence MSMEs.</p>
+      </div>
+
+      <div class="footer-layout1__addresses">
+        <div class="footer-layout1__address">
+          <h3>Registered Office – Haryana</h3>
+          <p>Plot No. 1227, HSIIDC Industrial Estate, Phase-V, Rai, District Sonipat 131029, India</p>
+        </div>
+        <div class="footer-layout1__address">
+          <h3>Pune Centre</h3>
+          <p>222, West Avenue, Aundh, Pune 411007, India</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-layout1__social">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><span>LinkedIn</span></li>
+        <li><span>X</span></li>
+        <li><span>YouTube</span></li>
+        <li><span>WhatsApp Channel</span></li>
+      </ul>
+    </div>
+
+    
+</footer>
 
 <script>
 const cells=[
@@ -279,7 +419,53 @@ const steps=document.getElementById('steps');
 function role(r){document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===r));
 steps.innerHTML=flows[r].map(s=>'<div class="card"><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>').join('');}
 document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>role(b.dataset.r));role('v');
-document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('msg').textContent='Prototype only: your details have not been sent or saved. Backend submission will be connected separately.';};
+const API_URL = "https://fmvoda-website.onrender.com";
+
+document.getElementById('f').onsubmit = async (e) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const msg = document.getElementById('msg');
+  const button = form.querySelector('button[type="submit"]');
+
+  const data = {
+    c: form.elements.c.value.trim(),
+    p: form.elements.p.value.trim(),
+    s: form.elements.s.value
+  };
+
+  button.disabled = true;
+  msg.style.color = "#1E7A44";
+  msg.textContent = "Submitting your application...";
+
+  try {
+    const response = await fetch(`${API_URL}/api/membership`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.detail || "Submission failed");
+    }
+
+    msg.textContent =
+      `Application submitted successfully! Reference ID: ${result.reference_id}`;
+
+    form.reset();
+  } catch (error) {
+    console.error("Membership submission error:", error);
+    msg.style.color = "#B42318";
+    msg.textContent =
+      "Unable to submit your application. Please try again later.";
+  } finally {
+    button.disabled = false;
+  }
+};
 </script>
 </body>
 </html>
